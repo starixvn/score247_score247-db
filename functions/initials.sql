@@ -1,4 +1,8 @@
-CREATE DEFINER=`dev`@`%` FUNCTION `initials`(str text, expr text) RETURNS text CHARSET utf8
+DROP function IF EXISTS `initials`;
+
+CREATE DEFINER=`user`@`%` FUNCTION `initials`(str text, expr text) RETURNS text CHARSET utf8
+READS SQL DATA
+DETERMINISTIC
 begin
     declare result text default '';
     declare buffer text default '';
