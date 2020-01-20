@@ -13,7 +13,7 @@ namespace DBUp.Deployment
     {
         private static int Main(string[] args)
         {
-            var environment = "dev";
+            var environment = "azure";
             var settingPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), $"app-settings.{environment}.json");
             var settings = File.ReadAllText(settingPath);
             var connectionConfiguration = JsonConvert.DeserializeObject<ConnectionConfiguration>(settings);
@@ -30,7 +30,8 @@ namespace DBUp.Deployment
 
                 //InstallNewDatabase(config.ToString()); // Only run when you create new database
 
-                InstallStoredProcedures(config.ToString());
+                InstallFunctions(config.ToString());
+                //InstallStoredProcedures(config.ToString());
                 //InstallReProcessStoredProcedures(config.ToString(), environment, config.Database);
 
                 //InstallEventSchedulers(config.ToString(), environment, config.Database);
@@ -107,6 +108,13 @@ namespace DBUp.Deployment
             var subDirs = Directory.GetDirectories(dir);
 
             return RunScripts(connectionString, subDirs);
+        }
+
+        public static int InstallFunctions(string connectionString)
+        {
+            var dir = new DirectoryInfo("../../../../functions").FullName;
+
+            return RunScripts(connectionString, new string[] { dir });
         }
 
         public static int InstallReProcessStoredProcedures(string connectionString, string environment, string dbName)
