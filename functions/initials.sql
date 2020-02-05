@@ -1,6 +1,8 @@
 DROP FUNCTION IF EXISTS `initials`;
 
 CREATE DEFINER=`user`@`%` FUNCTION `initials`(str text) RETURNS text CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci
+READS SQL DATA
+DETERMINISTIC
 begin
 declare result text default '';
 declare i int default 1;
