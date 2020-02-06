@@ -13,7 +13,7 @@ namespace DBUp.Deployment
     {
         private static int Main(string[] args)
         {
-            var environment = "azure";
+            var environment = "dev1";
             var settingPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), $"app-settings.{environment}.json");
             var settings = File.ReadAllText(settingPath);
             var connectionConfiguration = JsonConvert.DeserializeObject<ConnectionConfiguration>(settings);
@@ -30,8 +30,8 @@ namespace DBUp.Deployment
 
                 //InstallNewDatabase(config.ToString()); // Only run when you create new database
 
-                InstallFunctions(config.ToString());
-                //InstallStoredProcedures(config.ToString());
+                //InstallFunctions(config.ToString());
+                InstallStoredProcedures(config.ToString());
                 //InstallReProcessStoredProcedures(config.ToString(), environment, config.Database);
 
                 //InstallEventSchedulers(config.ToString(), environment, config.Database);
