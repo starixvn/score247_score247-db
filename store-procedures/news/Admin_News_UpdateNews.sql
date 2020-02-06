@@ -1,3 +1,5 @@
+DROP procedure IF EXISTS `Admin_News_UpdateNews`;
+
 CREATE DEFINER=`root`@`%` PROCEDURE `Admin_News_UpdateNews`(
 	IN title varchar(500), 
 	IN content mediumtext,

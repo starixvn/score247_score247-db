@@ -1,3 +1,5 @@
+DROP procedure IF EXISTS `Admin_News_GetAll`;
+
 CREATE DEFINER=`root`@`%` PROCEDURE `Admin_News_GetAll`(IN languageCode varchar(10), IN sportId int(11))
 BEGIN
 	SELECT
