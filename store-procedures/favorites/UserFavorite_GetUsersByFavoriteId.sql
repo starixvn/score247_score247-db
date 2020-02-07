@@ -7,5 +7,6 @@ BEGIN
 	FROM `UserFavorite` AS F
 	WHERE F.FavoriteId = id
 		AND F.Type = favoriteType
-		AND F.SportId = sportId;
+		AND F.SportId = sportId
+        AND F.EnablePush = true;
 END
