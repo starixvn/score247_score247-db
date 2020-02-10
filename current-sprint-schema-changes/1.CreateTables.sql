@@ -9,5 +9,6 @@ CREATE TABLE `UserFavorite` (
   `CreatedTime` timestamp NULL DEFAULT NULL,
   `ModifiedTime` timestamp NULL DEFAULT NULL,
   `Group` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `OS` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'iOS',
   PRIMARY KEY (`UserId`,`FavoriteId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
