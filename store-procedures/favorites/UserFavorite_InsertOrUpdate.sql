@@ -10,8 +10,8 @@ BEGIN
 			(`UserId`,
 			`FavoriteId`,
 			`Type`,
-			`SportId`,
             `Group`,
+			`SportId`,            
 			`CreatedTime`,
 			`ModifiedTime`)
 			VALUES
