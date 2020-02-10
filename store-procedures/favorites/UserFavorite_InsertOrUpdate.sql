@@ -11,12 +11,14 @@ BEGIN
 			`FavoriteId`,
 			`Type`,
 			`SportId`,
+            `Group`,
 			`CreatedTime`,
 			`ModifiedTime`)
 			VALUES
 			(userId,
 			JSON_UNQUOTE(JSON_EXTRACT(favorites, CONCAT('$[', i, '].Id'))),
 			JSON_UNQUOTE(JSON_EXTRACT(favorites, CONCAT('$[', i, '].Type'))),
+            JSON_UNQUOTE(JSON_EXTRACT(favorites, CONCAT('$[', i, '].Group'))),
 			sportId,
 			now(),
 			now())
