@@ -13,7 +13,7 @@ BEGIN
 			OR 
 			(	
 				F.FavoriteId IN (SELECT LeagueId FROM `Match` WHERE Id = matchId) 
-				AND F.Group IN (SELECT JSON_UNQUOTE(Value -> "$.GroupName") FROM `Match` WHERE Id = matchId) 
+				AND F.Group IN (SELECT JSON_UNQUOTE(Value -> "$.LeagueGroupName") FROM `Match` WHERE Id = matchId) 
 				AND F.Type = 2
 			)
         )
