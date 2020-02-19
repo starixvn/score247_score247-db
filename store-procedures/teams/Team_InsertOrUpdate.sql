@@ -18,14 +18,14 @@ DECLARE i INT DEFAULT 0;
 			JSON_UNQUOTE(JSON_EXTRACT(teams, CONCAT('$[', i, '].Id'))),
             sportId, 
             language, 
-			JSON_EXTRACT(teams, CONCAT('$[', i, '].Name')),            
+			JSON_UNQUOTE(JSON_EXTRACT(teams, CONCAT('$[', i, '].Name'))),            
             JSON_EXTRACT(teams, CONCAT('$[', i, ']')),              
             JSON_UNQUOTE(JSON_EXTRACT(teams, CONCAT('$[', i, '].Abbreviation'))), 
             now(),
             now())
 		ON DUPLICATE KEY UPDATE
             ModifiedTime = now(),
-            Name = JSON_EXTRACT(teams, CONCAT('$[', i, '].Name')),
+            Name = JSON_UNQUOTE(JSON_EXTRACT(teams, CONCAT('$[', i, '].Name'))),
             Abbreviation = JSON_UNQUOTE(JSON_EXTRACT(teams, CONCAT('$[', i, '].Abbreviation')));
         -- Increment the loop variable                                                                                                                                                        
         SET i = i + 1;
