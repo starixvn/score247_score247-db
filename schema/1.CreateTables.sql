@@ -253,8 +253,12 @@ CREATE TABLE `Team` (
   `TrendingOrder` int(10) NOT NULL DEFAULT '10000',
   `CreatedTime` timestamp NOT NULL,
   `ModifiedTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`Id`,`Language`)
+  `IsTrending` tinyint(4) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`Id`,`Language`),
+  KEY `team_name_index` (`Name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
 
 
 

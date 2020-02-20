@@ -9,3 +9,5 @@ CREATE INDEX headtohead_away_team_index ON HeadToHead(AwayTeamId);
 
 CREATE INDEX userfavorite_favorite_id_index ON UserFavorite(FavoriteId);
 CREATE INDEX userfavorite_type_index ON UserFavorite(Type);
+
+CREATE INDEX team_name_index ON Team(Name);
