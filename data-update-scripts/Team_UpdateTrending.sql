@@ -1,0 +1,17 @@
+UPDATE Team AS T SET T.IsTrending = 1, T.TrendingOrder = 1 WHERE T.Id = 'sr:competitor:2817';
+UPDATE Team AS T SET T.IsTrending = 1, T.TrendingOrder = 2 WHERE T.Id = 'sr:competitor:2829';
+UPDATE Team AS T SET T.IsTrending = 1, T.TrendingOrder = 3 WHERE T.Id = 'sr:competitor:44';
+UPDATE Team AS T SET T.IsTrending = 1, T.TrendingOrder = 4 WHERE T.Id = 'sr:competitor:2687';
+UPDATE Team AS T SET T.IsTrending = 1, T.TrendingOrder = 5 WHERE T.Id = 'sr:competitor:35';
+UPDATE Team AS T SET T.IsTrending = 1, T.TrendingOrder = 6 WHERE T.Id = 'sr:competitor:17';
+UPDATE Team AS T SET T.IsTrending = 1, T.TrendingOrder = 7 WHERE T.Id = 'sr:competitor:38';
+UPDATE Team AS T SET T.IsTrending = 1, T.TrendingOrder = 8 WHERE T.Id = 'sr:competitor:1644';
+UPDATE Team AS T SET T.IsTrending = 1, T.TrendingOrder = 9 WHERE T.Id = 'sr:competitor:42';
+UPDATE Team AS T SET T.IsTrending = 1, T.TrendingOrder = 10 WHERE T.Id = 'sr:competitor:2672';
+UPDATE Team AS T SET T.IsTrending = 1, T.TrendingOrder = 11 WHERE T.Id = 'sr:competitor:33';
+UPDATE Team AS T SET T.IsTrending = 1, T.TrendingOrder = 12 WHERE T.Id = 'sr:competitor:2673';
+UPDATE Team AS T SET T.IsTrending = 1, T.TrendingOrder = 13 WHERE T.Id = 'sr:competitor:2697';
+UPDATE Team AS T SET T.IsTrending = 1, T.TrendingOrder = 14 WHERE T.Id = 'sr:competitor:2692';
+UPDATE Team AS T SET T.IsTrending = 1, T.TrendingOrder = 15 WHERE T.Id = 'sr:competitor:2953';
+UPDATE Team AS T SET T.IsTrending = 1, T.TrendingOrder = 16 WHERE T.Id = 'sr:competitor:31';
+UPDATE Team AS T SET T.IsTrending = 1, T.TrendingOrder = 17 WHERE T.Id = 'sr:competitor:2836';

@@ -7,7 +7,7 @@ BEGIN
 
     WHILE i < e DO                                                                                                              
         INSERT INTO `Match` 
-        (`Id`, `Value`, `SportId`, `Language`, `LeagueId`, `EventDate`, `Region`, `LeagueSeasonId`, `CreatedTime`, `ModifiedTime`)
+        (`Id`, `Value`, `SportId`, `Language`, `LeagueId`, `EventDate`, `Region`, `LeagueSeasonId`, `HomeTeamId`, `AwayTeamId`, `CreatedTime`, `ModifiedTime`)
         VALUES (
 			JSON_UNQUOTE(JSON_EXTRACT(matches, CONCAT('$[', i, '].Id'))),
 			JSON_EXTRACT(matches, CONCAT('$[', i, ']')),            
@@ -17,6 +17,8 @@ BEGIN
             STR_TO_DATE(JSON_UNQUOTE(JSON_EXTRACT(matches, CONCAT('$[', i, '].EventDate'))),'%Y-%m-%dT%H:%i:%s+00:00'),
             JSON_UNQUOTE(JSON_EXTRACT(matches, CONCAT('$[', i, '].Region'))),
             JSON_UNQUOTE(JSON_EXTRACT(matches, CONCAT('$[', i, '].LeagueSeason.Id'))),
+            JSON_UNQUOTE(JSON_EXTRACT(matches, CONCAT('$[', i, '].Teams[0].Id'))),
+            JSON_UNQUOTE(JSON_EXTRACT(matches, CONCAT('$[', i, '].Teams[1].Id'))),
             now(),
             now())
 		ON DUPLICATE KEY UPDATE
