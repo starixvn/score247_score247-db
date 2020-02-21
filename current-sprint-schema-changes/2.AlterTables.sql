@@ -1,0 +1,3 @@
+ALTER TABLE `Match` 
+ADD COLUMN `HomeTeamId` VARCHAR(45) NULL AFTER `ModifiedTime`,
+ADD COLUMN `AwayTeamId` VARCHAR(45) NULL AFTER `HomeTeamId`;
