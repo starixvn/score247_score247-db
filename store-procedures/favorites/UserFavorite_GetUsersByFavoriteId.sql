@@ -16,6 +16,11 @@ BEGIN
 				AND F.Group IN (SELECT JSON_UNQUOTE(Value -> "$.LeagueGroupName") FROM `Match` WHERE Id = matchId) 
 				AND F.Type = 2
 			)
+            OR 
+			(	
+				F.FavoriteId IN (SELECT HomeTeamId, AwayTeamId FROM `Match` WHERE Id = matchId)
+                AND F.Type = 3
+			)
         )
 		AND F.SportId = sportId
         AND F.EnablePush = true;
