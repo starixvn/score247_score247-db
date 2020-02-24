@@ -18,7 +18,7 @@ BEGIN
 			)
             OR 
 			(	
-				F.FavoriteId IN (SELECT HomeTeamId, AwayTeamId FROM `Match` WHERE Id = matchId)
+				(F.FavoriteId IN (SELECT HomeTeamId FROM `Match` WHERE Id = matchId) OR F.FavoriteId IN (SELECT AwayTeamId FROM `Match` WHERE Id = matchId))    
                 AND F.Type = 3
 			)
         )
