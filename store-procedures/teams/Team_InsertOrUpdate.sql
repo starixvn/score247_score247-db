@@ -13,7 +13,8 @@ DECLARE i INT DEFAULT 0;
 		`Value`,
 		`Abbreviation`,
 		`CreatedTime`,
-		`ModifiedTime`)
+		`ModifiedTime`,
+        `LogoName`)
         VALUES (
 			JSON_UNQUOTE(JSON_EXTRACT(teams, CONCAT('$[', i, '].Id'))),
             sportId, 
@@ -22,7 +23,8 @@ DECLARE i INT DEFAULT 0;
             JSON_EXTRACT(teams, CONCAT('$[', i, ']')),              
             JSON_UNQUOTE(JSON_EXTRACT(teams, CONCAT('$[', i, '].Abbreviation'))), 
             now(),
-            now())
+            now(),
+            CONCAT(REPLACE(JSON_UNQUOTE(JSON_EXTRACT(teams, CONCAT('$[', i, '].CountryCode'))),"null", ""), JSON_UNQUOTE(JSON_EXTRACT(teams, CONCAT('$[', i, '].Abbreviation')))))
 		ON DUPLICATE KEY UPDATE
             ModifiedTime = now(),
             Name = JSON_UNQUOTE(JSON_EXTRACT(teams, CONCAT('$[', i, '].Name'))),
