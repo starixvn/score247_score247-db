@@ -7,5 +7,6 @@ BEGIN
 			WHERE (M.HomeTeamId = teamId || M.AwayTeamId = teamId)
 			AND M.SportId = sportId
 			AND M.Language = language
-            AND EventDate >= (UTC_TIMESTAMP() - INTERVAL 6 MONTH); 
+            AND EventDate >= (UTC_TIMESTAMP() - INTERVAL 6 MONTH)
+			AND EventDate <= (UTC_TIMESTAMP() + INTERVAL 6 MONTH); 
 END
