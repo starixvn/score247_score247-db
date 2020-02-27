@@ -28,7 +28,8 @@ DECLARE i INT DEFAULT 0;
 		ON DUPLICATE KEY UPDATE
             ModifiedTime = now(),
             Name = JSON_UNQUOTE(JSON_EXTRACT(teams, CONCAT('$[', i, '].Name'))),
-            Abbreviation = JSON_UNQUOTE(JSON_EXTRACT(teams, CONCAT('$[', i, '].Abbreviation')));
+            Abbreviation = JSON_UNQUOTE(JSON_EXTRACT(teams, CONCAT('$[', i, '].Abbreviation'))),
+            Value = JSON_EXTRACT(teams, CONCAT('$[', i, ']'));
         -- Increment the loop variable                                                                                                                                                        
         SET i = i + 1;
     END WHILE;
