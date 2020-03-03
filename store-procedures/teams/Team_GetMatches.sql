@@ -8,5 +8,5 @@ BEGIN
 			AND M.SportId = sportId
 			AND M.Language = language
             AND  M.EventDate <= LAST_DAY(UTC_TIMESTAMP() + INTERVAL 6 MONTH)
-			AND M.EventDate > LAST_DAY(UTC_TIMESTAMP()  - INTERVAL 5 MONTH); 
+			AND M.EventDate > LAST_DAY(UTC_TIMESTAMP()  - INTERVAL 7 MONTH); 
 END
