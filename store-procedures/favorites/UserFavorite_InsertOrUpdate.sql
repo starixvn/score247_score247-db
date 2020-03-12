@@ -28,7 +28,11 @@ BEGIN
             deviceId)
 		ON DUPLICATE KEY UPDATE            
             ModifiedTime = now();
-        -- Increment the loop variable                                                                                                                                                        
+        -- Increment the loop variable                      
         SET i = i + 1;
     END WHILE;
+    
+    DELETE FROM `UserFavorite` AS F 
+    WHERE F.UserId = userId 
+    AND F.DeviceId <> deviceId;
 END
