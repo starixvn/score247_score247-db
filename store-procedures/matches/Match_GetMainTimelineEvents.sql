@@ -6,7 +6,7 @@ BEGIN
 		FROM Timeline AS T 
 		WHERE T.MatchId = matchId
         AND T.Language = language
-		AND T.`Type` IN ('score_change', 'penalty_missed', 'yellow_card', 'red_card', 'yellow_red_card', 'penalty_shootout', 'break_start', 'match_ended', 'substitution'))	
+		AND T.`Type` IN ('score_change', 'penalty_missed', 'yellow_card', 'red_card', 'yellow_red_card', 'penalty_shootout', 'break_start', 'match_ended', 'substitution','video_assistant_referee_over'))	
 	) AS Value
 	FROM `Match` AS M
 	WHERE M.Id = matchId
